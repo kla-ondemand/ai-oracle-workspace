@@ -1,0 +1,88 @@
+# ─── OS ───────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── Editors / IDEs ───────────────────────────────────────────
+*.swp
+*.swo
+*~
+.#*
+\#*\#
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace
+*.sublime-project
+.history/
+.netrwhist
+
+# ─── Secrets / credentials ────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+secrets/
+credentials.json
+.claude/local.json
+.claude/sessions/
+
+# ─── Logs / tmp ───────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.cache/
+tmp/
+*.tmp
+
+# ─── Node ─────────────────────────────────────────────────────
+node_modules/
+dist/
+build/
+out/
+.next/
+.turbo/
+.pnpm-store/
+coverage/
+.nyc_output/
+
+# ─── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.tox/
+
+# ─── Rust ─────────────────────────────────────────────────────
+target/
+
+# ─── Nested agent repos ───────────────────────────────────────
+# Each agent under agents/<name>/ is its own independent git repo.
+# Workspace tracks agents/README.md but not the agent working trees.
+agents/*/
+
+# ─── Local-only working areas ─────────────────────────────────
+incubate/
+scratch/
+
+# ─── Per-machine CLI state (Gemini, etc.) ─────────────────────
+.antigravitycli/
+.gemini/

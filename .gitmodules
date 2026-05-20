@@ -1,0 +1,18 @@
+[submodule "projects/openclaude"]
+	path = projects/openclaude
+	url = https://github.com/kla-ondemand/openclaude.git
+[submodule "projects/maw-js"]
+	path = projects/maw-js
+	url = https://github.com/Soul-Brews-Studio/maw-js.git
+[submodule "projects/oracle-framework"]
+	path = projects/oracle-framework
+	url = https://github.com/Soul-Brews-Studio/oracle-framework.git
+[submodule "projects/hermes-agent"]
+	path = projects/hermes-agent
+	url = https://github.com/NousResearch/hermes-agent.git
+[submodule "projects/thClaws"]
+	path = projects/thClaws
+	url = https://github.com/thClaws/thClaws.git
+[submodule "projects/openclaw"]
+	path = projects/openclaw
+	url = https://github.com/openclaw/openclaw.git
