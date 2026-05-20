@@ -4,12 +4,7 @@ Index of notes in this directory. File format: `YYYY-MM-DD-{title}.md`.
 
 ## Index
 
-_No notes yet._
+### 2026
 
-<!--
-When adding a note, append a row below grouped by year. Example:
+- [2026-05-20 — Workspace bootstrap](2026-05-20-workspace-bootstrap.md) — turned the empty tree into a public submodule monorepo; recorded the non-obvious gotchas (stale `.git/modules`, agent-template rename, pin semantics).
 
-## 2026
-
-- [2026-05-20 — Example title](2026-05-20-example-title.md)
--->
