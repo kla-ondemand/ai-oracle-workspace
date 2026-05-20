@@ -16,6 +16,7 @@ This is a **multi-repo workspace** that groups together independently-versioned 
 | `knowledge/` | Durable, topic-organized reference material. Kebab-case filenames, no date prefix. Currently holds per-project orientation summaries under `knowledge/projects/`. Index: `knowledge/README.md`. |
 | `notes/` | Dated journal-style notes. File format: `YYYY-MM-DD-{title}.md`. Index: `notes/README.md`. Distinct from `knowledge/` — notes are point-in-time entries; knowledge entries are edited over time. |
 | `projects/` | Cloned third-party repos for study, tracked as git submodules pinned to specific commits. Treat as read-only unless explicitly told otherwise; do **not** commit changes upstream without explicit instruction. |
+| `research/` | Externally-sourced research artifacts (citation-backed, refreshable). Kebab-case filenames, no date prefix; date lives in `researched_at` frontmatter. Index: `research/README.md`. Written by the `/research` skill (`skills/research/`). Distinct from `knowledge/` (durable concepts) and `notes/` (dated manual entries). |
 | `skills/` | **Shared skill library** — portable `SKILL.md`-format skills. Not auto-loaded. Agents/surfaces adopt them by symlinking into their own `.claude/skills/`. Distinct from `.claude/skills/` (which *is* auto-loaded for this workspace; currently provides `/learning`). See `skills/README.md` for adoption procedure. |
 
 ## Working Inside an Agent (`agents/<name>/`)
@@ -34,9 +35,11 @@ Each `projects/` subdirectory is an independent upstream repo (cloned from GitHu
 
 Do not commit changes to project repos unless the user explicitly asks — these are study clones, not forks.
 
-## Notes & Knowledge
+## Notes, Knowledge & Research
 
 - **`notes/`** — dated journal-style entries (session diaries, one-off observations). Append new files to `notes/README.md` grouped by year. **Manual channel only** — do not route automated skill output here.
-- **`knowledge/`** — durable topic-organized reference. Kebab-case filenames, no date prefix. Append to `knowledge/README.md` grouped by topic.
+- **`knowledge/`** — durable topic-organized reference (concepts internalized from study, no external citation required). Kebab-case filenames, no date prefix. Append to `knowledge/README.md` grouped by topic.
+- **`research/`** — externally-sourced findings (citation-backed, refreshable). Kebab-case filenames, no date prefix; staleness tracked via `researched_at` frontmatter. Append one-line entry to `research/README.md`. Written by the `/research` skill.
 - **`/learning` skill output ALWAYS goes to `knowledge/`** in this workspace — this overrides the skill's default routing (which would otherwise send single-session learnings to `notes/`). Rationale: this workspace treats `/learning` output as durable reference material that grows over time, not session-bound diary entries. Even on the first pass of a topic, write the entry to `knowledge/{topic-kebab}.md` in the knowledge template (one-sentence definition + topic sections), then update or expand it on later passes rather than creating a new dated note.
+- **`/research` vs `/learning`** — if findings come from external sources that need to be cited and may go stale, use `/research` → `research/`. If findings are conceptual takeaways from reading the workspace's own code or study clones, use `/learning` → `knowledge/`. When in doubt, ask.
 - For an orientation summary on any `projects/<name>/` study clone, check `knowledge/projects/<name>.md` first before re-reading the upstream repo.

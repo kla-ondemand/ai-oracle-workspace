@@ -52,6 +52,10 @@ cp -R ../../skills/<skill-name> .claude/skills/<skill-name>
 
 - [codex-cli/](codex-cli/) — drive OpenAI's Codex CLI; approval/sandbox modes, `~/.codex/config.toml`, `AGENTS.md` shared convention, MCP, custom sub-agents under `.codex/agents/`.
 
+### Research & Knowledge Capture
+
+- [research/](research/) — externally-sourced research with persistence to `research/{topic-kebab}.md`; web search + citation, refreshable entries via `researched_at` frontmatter.
+
 <!--
 When adding a skill, append a one-line entry under the right section. Add new sections as needed. Example categories:
 
