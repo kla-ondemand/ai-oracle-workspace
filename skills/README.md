@@ -48,16 +48,19 @@ cp -R ../../skills/<skill-name> .claude/skills/<skill-name>
 
 ## Index
 
-_No shared skills yet._
+### Agentic CLI Tooling
+
+- [codex-cli/](codex-cli/) — drive OpenAI's Codex CLI; approval/sandbox modes, `~/.codex/config.toml`, `AGENTS.md` shared convention, MCP, custom sub-agents under `.codex/agents/`.
 
 <!--
-When adding a skill, append a one-line entry below grouped by category. Example:
+When adding a skill, append a one-line entry under the right section. Add new sections as needed. Example categories:
 
 ## Memory & Reflection
-
-- [learning/](learning/) — read and write learning summaries; writes to notes/ or knowledge/.
+- [learning/](learning/) — read and write learning summaries.
 
 ## Session Lifecycle
-
 - [session-start/](session-start/) — load memory + task-log at session start.
+
+## Agentic CLI Tooling
+- [codex-cli/](codex-cli/) — drive OpenAI Codex CLI.
 -->
