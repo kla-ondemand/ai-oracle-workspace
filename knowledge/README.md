@@ -15,6 +15,10 @@ Distinct from [`../notes/`](../notes/README.md): notes are dated journal-style e
 - [projects/hermes-agent.md](projects/hermes-agent.md) — Nous Research's self-improving agent with a closed learning loop; explicit successor to OpenClaw via `hermes claw migrate`.
 - [projects/thclaws.md](projects/thclaws.md) — native-Rust agent workspace, four surfaces over one engine; standards-first (MCP, `AGENTS.md`, `SKILL.md`), KMS via grep+read.
 
+### External platforms / vendors
+
+- [google-antigravity.md](google-antigravity.md) — Google's agent-first dev platform (Antigravity 2.0, I/O 2026); four surfaces (desktop / CLI / SDK / Managed Agents API) over one Gemini-co-optimised harness; Gemini CLI consumer sunset 2026-06-18.
+
 <!--
 When adding an entry, group by topic. Use kebab-case filenames (no date prefix).
 -->
