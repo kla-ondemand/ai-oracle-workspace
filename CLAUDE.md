@@ -6,15 +6,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a **multi-repo workspace** that groups together independently-versioned agents and projects under one tree for local exploration and study. The workspace itself is a thin git superproject — its only tracked content is documentation, indexes, and submodule pointers. Build, test, and lint commands live inside each sub-repo; there is no workspace-level toolchain.
 
+`projects/` are git submodules; `agents/*/` are nested-but-**gitignored** in the superproject (only `agents/README.md` is tracked). This means edits inside an agent repo will not appear in the workspace's `git status` — switch into the agent directory to see its own status. Fresh clones need `git clone --recurse-submodules` (or `git submodule update --init` afterward) to populate `projects/`.
+
 ## Layout
 
 | Path | Contents |
 |------|----------|
-| `agents/` | One subdirectory per agent. Each agent is its own git repo following the template in `agents/_template/`. |
-| `knowledge/` | Shared notes / reference material (currently empty). |
-| `notes/` | Personal notes. File format: `YYYY-MM-DD-{title}.md`. `notes/README.md` is the index. |
-| `projects/` | Cloned third-party repos for study. Each is its own git repo — treat as read-only unless explicitly told otherwise. |
-| `skills/` | **Shared skill library** — portable `SKILL.md`-format skills. Not auto-loaded. Agents/surfaces adopt them by symlinking into their own `.claude/skills/`. Distinct from `.claude/skills/` (which *is* auto-loaded for this workspace). See `skills/README.md` for adoption procedure. |
+| `agents/` | One subdirectory per agent. Each agent is its own independent git repo (not a submodule) following the template in `agents/_template/`. Working trees are gitignored at the workspace level. |
+| `knowledge/` | Durable, topic-organized reference material. Kebab-case filenames, no date prefix. Currently holds per-project orientation summaries under `knowledge/projects/`. Index: `knowledge/README.md`. |
+| `notes/` | Dated journal-style notes. File format: `YYYY-MM-DD-{title}.md`. Index: `notes/README.md`. Distinct from `knowledge/` — notes are point-in-time entries; knowledge entries are edited over time. |
+| `projects/` | Cloned third-party repos for study, tracked as git submodules pinned to specific commits. Treat as read-only unless explicitly told otherwise; do **not** commit changes upstream without explicit instruction. |
+| `skills/` | **Shared skill library** — portable `SKILL.md`-format skills. Not auto-loaded. Agents/surfaces adopt them by symlinking into their own `.claude/skills/`. Distinct from `.claude/skills/` (which *is* auto-loaded for this workspace; currently provides `/learning`). See `skills/README.md` for adoption procedure. |
 
 ## Working Inside an Agent (`agents/<name>/`)
 
@@ -32,6 +34,9 @@ Each `projects/` subdirectory is an independent upstream repo (cloned from GitHu
 
 Do not commit changes to project repos unless the user explicitly asks — these are study clones, not forks.
 
-## Notes Index
+## Notes & Knowledge
 
-`notes/README.md` indexes files matching `YYYY-MM-DD-{title}.md`. When adding a note, append it to the index grouped by year.
+- **`notes/`** — dated journal-style entries (session diaries, one-off observations). Append new files to `notes/README.md` grouped by year. **Manual channel only** — do not route automated skill output here.
+- **`knowledge/`** — durable topic-organized reference. Kebab-case filenames, no date prefix. Append to `knowledge/README.md` grouped by topic.
+- **`/learning` skill output ALWAYS goes to `knowledge/`** in this workspace — this overrides the skill's default routing (which would otherwise send single-session learnings to `notes/`). Rationale: this workspace treats `/learning` output as durable reference material that grows over time, not session-bound diary entries. Even on the first pass of a topic, write the entry to `knowledge/{topic-kebab}.md` in the knowledge template (one-sentence definition + topic sections), then update or expand it on later passes rather than creating a new dated note.
+- For an orientation summary on any `projects/<name>/` study clone, check `knowledge/projects/<name>.md` first before re-reading the upstream repo.
