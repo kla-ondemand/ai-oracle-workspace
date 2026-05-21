@@ -51,6 +51,7 @@ cp -R ../../skills/<skill-name> .claude/skills/<skill-name>
 ### Agentic CLI Tooling
 
 - [antigravity-cli/](antigravity-cli/) — drive Google's Antigravity CLI (`agy`); Go-rewritten successor to Gemini CLI, dynamic subagents, plugin model with `import claude|gemini`, `AGENTS.md`/`GEMINI.md` convention, 2026-06-18 consumer sunset.
+- [claude-cli/](claude-cli/) — drive Anthropic's Claude Code CLI (`claude`); `-p` non-interactive, six-value `--permission-mode`, granular `--allowedTools`, worktree+tmux session model, `--bare` clean-room mode, MCP/plugin/agents subcommands.
 - [codex-cli/](codex-cli/) — drive OpenAI's Codex CLI; two-axis safety model (`--ask-for-approval` × `--sandbox`), `~/.codex/config.toml`, MCP and plugin subcommands, OSS provider support (`--oss`), AGENTS.md convention.
 
 ### Research & Knowledge Capture
