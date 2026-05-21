@@ -29,6 +29,12 @@ Each agent repo follows a fixed protocol — **read the agent's own `AGENTS.md` 
 - New agents are created by running `agents/_template/scripts/incarnate.sh <agent-name>` — never copy the template by hand.
 - Each task gets its own git worktree under `/tmp/<taskId>`; do not branch-switch inside an agent repo.
 
+### Agents (auto-loaded)
+
+All agent instruction files are auto-loaded into context when Claude Code starts in this workspace:
+
+- @agents/*/CLAUDE.md
+
 ## Working Inside a Project (`projects/<name>/`)
 
 Each `projects/` subdirectory is an independent upstream repo (cloned from GitHub). Build/test/lint commands are project-specific — check that repo's own `README.md`, `CLAUDE.md`, or `package.json`/`Makefile`/etc.
