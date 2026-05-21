@@ -50,7 +50,7 @@ cp -R ../../skills/<skill-name> .claude/skills/<skill-name>
 
 ### Agentic CLI Tooling
 
-- [codex-cli/](codex-cli/) — drive OpenAI's Codex CLI; approval/sandbox modes, `~/.codex/config.toml`, `AGENTS.md` shared convention, MCP, custom sub-agents under `.codex/agents/`.
+- [codex-cli/](codex-cli/) — drive OpenAI's Codex CLI; two-axis safety model (`--ask-for-approval` × `--sandbox`), `~/.codex/config.toml`, MCP and plugin subcommands, OSS provider support (`--oss`), AGENTS.md convention.
 
 ### Research & Knowledge Capture
 
