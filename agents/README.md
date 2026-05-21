@@ -27,9 +27,10 @@ After incarnating: edit `AGENTS.md` and `persona/README.md`, replace the `{{plac
 | Path | Role | Status |
 |------|------|--------|
 | [`_template/`](_template/) | Base profile + `incarnate.sh` scaffold. Underscore prefix marks it as the template, not a working agent. | Scaffold |
-| [`agent-coder/`](agent-coder/) | Best-practice coding agent. Reading/Writing/Testing/Safety/Verification standing rules baked into `AGENTS.md`. Model: `claude-opus-4-7` primary, `claude-sonnet-4-6` fallback. | Active |
-| [`agent-reviewer/`](agent-reviewer/) | Code, design, and documentation reviewer. Read-mostly; emits `verdict` + structured findings. Model: `claude-sonnet-4-6` primary, `claude-haiku-4-5` fallback. | Active |
-| [`agent-data-science/`](agent-data-science/) | Incarnated stub: `agentId: agent-data-science`, `primaryModel: claude-sonnet-4-6`. Persona/role still has `{{placeholder}}` values — not yet specialized. | Incarnated, awaiting customization |
+| [`agent-coder/`](agent-coder/) | Best-practice coding agent (BeBe — good-natured, composed). Reading/Writing/Testing/Safety/Verification standing rules baked into `AGENTS.md`. Model: `claude-opus-4-7` primary, `claude-sonnet-4-6` fallback. | Active |
+| [`agent-data-science/`](agent-data-science/) | Data scientist / analyst (BaBa — direct, formal). Notebook + report deliverables, calibrated uncertainty, reproducibility gates, structured analysis report shape. Model: `claude-sonnet-4-6` primary. | Active |
+| [`agent-qa/`](agent-qa/) | Code quality reviewer (BoBo — soft-spoken). A careful second pair of eyes on diffs; reports findings, does not author product code. Models not yet pinned in `config.manifest.json`. | Incarnated, awaiting model config |
+| [`agent-reviewer/`](agent-reviewer/) | Code / design / docs reviewer + content creator (Bobie — warm, cheerful). Read-mostly for reviews; write-mostly when authoring READMEs, release notes, tutorials, PR descriptions. Model: `claude-sonnet-4-6` primary, `claude-haiku-4-5` fallback. | Active |
 
 ## See Also
 
