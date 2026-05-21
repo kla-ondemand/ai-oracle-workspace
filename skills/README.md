@@ -54,6 +54,7 @@ cp -R ../../skills/<skill-name> .claude/skills/<skill-name>
 - [claude-cli/](claude-cli/) — drive Anthropic's Claude Code CLI (`claude`); `-p` non-interactive, six-value `--permission-mode`, granular `--allowedTools`, worktree+tmux session model, `--bare` clean-room mode, MCP/plugin/agents subcommands.
 - [codex-cli/](codex-cli/) — drive OpenAI's Codex CLI; two-axis safety model (`--ask-for-approval` × `--sandbox`), `~/.codex/config.toml`, MCP and plugin subcommands, OSS provider support (`--oss`), AGENTS.md convention.
 - [hermes-agent/](hermes-agent/) — drive Nous Research's Hermes Agent; programmatic one-shot via `hermes chat -q -Q`, session resume, messaging-gateway service bridging Telegram/Discord/Slack/WhatsApp/Signal/IRC/Teams/Google Chat/LINE/Weixin, cron delivery, OpenClaw migration path.
+- [openclaude/](openclaude/) — drive OpenClaude (Claude Code UX with the provider swapped out); `/provider` profiles, `CLAUDE_CODE_USE_OPENAI=1` env path, `ollama launch openclaude`, per-agent `agentRouting` in `~/.openclaude.json`, optional headless gRPC server for embedding.
 
 ### Research & Knowledge Capture
 
